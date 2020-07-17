@@ -9,7 +9,7 @@ const config = require('config');
 
 /**
  * @route   POST api/users
- * @desc    Register user
+ * @desc    Register user. Return token and user object after successful registration.
  * @access  Public
  */
 router.post(
