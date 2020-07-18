@@ -267,7 +267,7 @@ router.put(
       const profile = await Profile.findOne({ user: req.user.id });
 
       const newExpArray = await profile.experience.map((exp) => {
-        if (exp._id == req.params.exp_id) {
+        if (exp._id.toString() === req.params.exp_id) {
           if (title) exp.title = title;
           if (company) exp.company = company;
           if (location) exp.location = location;
@@ -405,7 +405,7 @@ router.put(
       const profile = await Profile.findOne({ user: req.user.id });
 
       const newEduArray = await profile.education.map((edu) => {
-        if (edu._id == req.params.edu_id) {
+        if (edu._id.toString() === req.params.edu_id) {
           if (school) edu.school = school;
           if (degree) edu.degree = degree;
           if (fieldOfStudy) edu.fieldOfStudy = fieldOfStudy;
