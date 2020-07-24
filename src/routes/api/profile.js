@@ -279,7 +279,7 @@ router.put(
         return exp;
       });
       profile.experience = newExpArray;
-      profile.save();
+      await profile.save();
       res.json(profile);
     } catch (err) {
       console.error(err.message);
@@ -417,7 +417,7 @@ router.put(
         return edu;
       });
       profile.education = newEduArray;
-      profile.save();
+      await profile.save();
       res.json(profile);
     } catch (err) {
       console.error(err.message);
